@@ -113,6 +113,7 @@ namespace MailClient.Test.TestBuilders
             foreach (var address in mailMessage.To.Cast<MailboxAddress>())
                 hMailMessage.AddRecipient(address.Name ?? address.Address, address.Address);
             hMailMessage.Save();
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
         }
 
         internal void CleanUp()
